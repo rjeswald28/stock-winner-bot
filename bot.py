@@ -367,6 +367,8 @@ def scan_market():
         if result["score"] >= 8 and alert_key not in alerted_today:
             alerted_today.add(alert_key)
 
+            print(f"SENDING ALERT FOR {result['ticker']}")
+ 
             chart_link = f"https://finance.yahoo.com/quote/{result['ticker']}"
 
             message = (
