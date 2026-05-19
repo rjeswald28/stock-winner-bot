@@ -12,7 +12,7 @@ last_alert_times = {}
 
 last_scan_time = "Never"
 
-last_update_id = 0
+last_update_id = None
 
 wins = 0
 losses = 0
@@ -451,6 +451,10 @@ def check_telegram_commands():
 
         response = requests.get(url, params=params, timeout=10)
         data = response.json()
+
+        if last_update_id is None and data.get("result"):
+           last_update_id = data["result"][-1]["update_id"]
+           return
 
         for update in data.get("result", []):
             last_update_id = update.get("update_id", last_update_id)
