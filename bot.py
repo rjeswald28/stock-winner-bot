@@ -446,9 +446,11 @@ def check_telegram_commands():
     try:
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/getUpdates"
 
-        params = {
-            "offset": last_update_id + 1
-        }
+        params = {}
+
+        if last_update_id is not None:
+            params["offset"] = last_update_id + 1
+        
 
         response = requests.get(url, params=params, timeout=10)
         data = response.json()
