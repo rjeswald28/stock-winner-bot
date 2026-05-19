@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 last_summary_date = None
 
+last_scan_time = "Never"
+
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -275,6 +277,9 @@ def get_top_movers():
 def scan_market():
     print("Scanning market...")
 
+    global last_scan_time
+    last_scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+   
     unique_watchlist = WATCHLIST
 
     for ticker in unique_watchlist:
@@ -350,6 +355,28 @@ def update_paper_trades():
 
     df.to_csv(file_name, index=False)
 
+def check_telegram_commands():
+    try:
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/getUpdates"
+        response = requests.get(url, timeout=10)
+        data = response.json()
+
+        for update in data.get("result", [])[-5:]:
+            message = update.get("message", {})
+            text = message.get("text", "")
+            chat = message.get("chat", {})
+            chat_id = str(chat.get("id"))
+
+            if text == "/status" and chat_id == str(CHAT_ID):
+                send_telegram(
+                    f"✅ Bot is online\n"
+                    f"Last scan: {last_scan_time}\n"
+                    f"Watchlist size: {len(WATCHLIST)}\n"
+                    f"Mode: Watchlist + paper trading"
+                )
+
+    except Exception as e:
+        print(f"Command check error: {e}")
 
 def main():
     send_telegram("✅ Family Stock Bot started. Watchlist mode only.")
@@ -358,6 +385,7 @@ def main():
         scan_market()
         update_paper_trades()
         send_daily_summary()
+        check_telegram_commands()
         time.sleep(SCAN_INTERVAL_SECONDS)
 
 if __name__ == "__main__":
