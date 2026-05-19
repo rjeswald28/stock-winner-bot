@@ -335,8 +335,7 @@ def scan_market():
     print("Scanning market...")
 
     if not market_is_bullish():
-        print("Market trend bearish. Skipping aggressive scans.")
-        return
+    print("Market trend bearish. Continuing anyway.")
 
     global last_scan_time
     last_scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
