@@ -203,6 +203,12 @@ def analyze_stock(ticker):
         risk = "HIGH"
     elif abs(price_change) >= 3 or volume_ratio >= 2.5:
         risk = "MEDIUM"
+    confidence = "SPECULATIVE"
+
+    if score >= 10 and risk != "HIGH":
+        confidence = "ELITE"
+    elif score >= 8:
+        confidence = "STRONG"
 
     return {
         "ticker": ticker,
@@ -210,6 +216,7 @@ def analyze_stock(ticker):
         "score": score,
         "risk": risk,
         "reasons": reasons,
+        "confidence": confidence,
         "price_change": round(price_change, 2),
         "gap_percent": round(gap_percent, 2),
         "relative_strength": round(relative_strength, 2),
@@ -316,12 +323,14 @@ def scan_market():
                 f"Ticker: ${result['ticker']}\n"
                 f"Price: ${result['price']}\n"
                 f"Score: {result['score']}/12\n"
+                f"Confidence: {result['confidence']}\n"
                 f"Risk: {result['risk']}\n"
                 f"Move: {result['price_change']}%\n"
                 f"Gap: {result['gap_percent']}%\n"
                 f"Relative Strength vs SPY: {result['relative_strength']}%\n"
                 f"Volume: {result['volume_ratio']}x avg\n\n"
                 f"Reasons:\n- " + "\n- ".join(result["reasons"]) +
+                f"\n\nQuick Read: {result['confidence']} setup with {result['volume_ratio']}x volume and {result['relative_strength']}% strength vs SPY.\n"
                 f"\n\nChart: {chart_link}\n"
                 f"Mode: Watchlist only, no buying."
             )
