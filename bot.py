@@ -378,6 +378,36 @@ def check_telegram_commands():
     except Exception as e:
         print(f"Command check error: {e}")
 
+def send_leaderboard():
+    try:
+        file_name = "paper_trading_log.csv"
+
+        df = pd.read_csv(file_name)
+
+        if df.empty:
+            return
+
+        completed = df.dropna(subset=["gain_1_hour"])
+
+        if completed.empty:
+            return
+
+        top = completed.sort_values(by="gain_1_hour", ascending=False).head(5)
+
+        message = "🏆 TOP STOCK ALERTS TODAY\n\n"
+
+        for _, row in top.iterrows():
+            message += (
+                f"{row['ticker']} | "
+                f"1H Gain: {row['gain_1_hour']}% | "
+                f"Score: {row['score']}/12\n"
+            )
+
+        send_telegram(message)
+
+    except Exception as e:
+        print(f"Leaderboard error: {e}")
+
 def main():
     send_telegram("✅ Family Stock Bot started. Watchlist mode only.")
 
@@ -385,6 +415,7 @@ def main():
         scan_market()
         update_paper_trades()
         send_daily_summary()
+        send_leaderboard()
         check_telegram_commands()
         time.sleep(SCAN_INTERVAL_SECONDS)
 
