@@ -364,7 +364,7 @@ def scan_market():
         if now_ts - last_alert < cooldown_seconds:
             continue
 
-        if result["score"] >= 8 and result["risk"] != "HIGH" and alert_key not in alerted_today:
+        if result["score"] >= 8 and alert_key not in alerted_today:
             alerted_today.add(alert_key)
 
             chart_link = f"https://finance.yahoo.com/quote/{result['ticker']}"
