@@ -1,0 +1,51 @@
+time,ticker,alert_price,score,risk,reasons,price_30_min,price_1_hour,price_1_day,price_1_week,gain_30_min,gain_1_hour
+2026-05-19 00:55:43,AAPL,297.9,5,LOW,Unusual volume: 3.55x avg | Near recent breakout high | Above short-term trend,297.9,297.9,,,,-0.0
+2026-05-19 00:55:44,NVDA,222.35,5,LOW,Unusual volume: 2.67x avg | Near recent breakout high | Above short-term trend,222.35,222.35,,,,0.0
+2026-05-19 00:55:45,TSLA,410.07,6,HIGH,Unusual volume: 2.71x avg | Near recent breakout high | Strong move: -6.79% | Above short-term trend,410.07,410.07,,,,0.0
+2026-05-19 00:55:46,AMD,421.02,6,HIGH,Unusual volume: 3.29x avg | Near recent breakout high | Strong move: -7.77% | Above short-term trend,421.02,421.02,,,,-0.0
+2026-05-19 00:55:47,MSFT,423.66,6,MEDIUM,Unusual volume: 3.59x avg | Near recent breakout high | Strong move: 3.21% | Above short-term trend,423.66,423.66,,,,0.0
+2026-05-19 00:55:51,META,611.33,4,LOW,Unusual volume: 3.62x avg | Strong move: 2.98% | Above short-term trend,611.33,611.33,,,,0.0
+2026-05-19 00:55:53,SPY,738.56,5,LOW,Unusual volume: 4.56x avg | Near recent breakout high | Above short-term trend,738.56,738.56,,,,-0.0
+2026-05-19 00:55:53,QQQ,705.7,5,LOW,Unusual volume: 3.46x avg | Near recent breakout high | Above short-term trend,705.7,705.7,,,,0.0
+2026-05-19 01:15:13,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,,-0.0
+2026-05-19 01:15:14,NVDA,222.35,7,MEDIUM,Heavy unusual volume: 2.67x avg | Near/breaking recent high | Gap move: 3.88% | Above short-term trend,222.35,222.35,,,,0.0
+2026-05-19 01:15:15,TSLA,410.07,9,HIGH,Heavy unusual volume: 2.71x avg | Near/breaking recent high | Strong move: -6.79% | Gap move: -4.68% | Above short-term trend,410.07,410.07,,,,0.0
+2026-05-19 01:15:16,AMD,421.02,9,HIGH,Heavy unusual volume: 3.29x avg | Near/breaking recent high | Strong move: -7.77% | Gap move: -6.11% | Above short-term trend,421.02,421.02,,,,-0.0
+2026-05-19 01:15:17,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,,0.0
+2026-05-19 01:15:18,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,,0.0
+2026-05-19 01:15:20,GOOGL,396.96,7,HIGH,Heavy unusual volume: 5.36x avg | Decent move: 2.86% | Outperforming SPY by 2.56% | Gap move: 2.57%,396.96,396.96,,,,-0.0
+2026-05-19 01:15:21,SPY,738.56,6,HIGH,Heavy unusual volume: 4.56x avg | Near/breaking recent high | Above short-term trend,738.56,738.56,,,,-0.0
+2026-05-19 01:15:22,QQQ,705.7,6,MEDIUM,Heavy unusual volume: 3.46x avg | Near/breaking recent high | Above short-term trend,705.7,705.7,,,,0.0
+2026-05-19 01:20:30,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,,-0.0
+2026-05-19 01:20:32,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,,0.0
+2026-05-19 01:20:34,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,,0.0
+2026-05-19 01:23:53,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,,-0.0
+2026-05-19 01:23:56,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,,0.0
+2026-05-19 01:23:57,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,,0.0
+2026-05-19 01:24:02,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,,0.0
+2026-05-19 01:34:04,AAPL,297.9,11,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend | Positive news: Apple CEO Tim Cook in Beijing with US Presidential Delegation – May 2026 - News and Statistics,297.9,297.9,,,,-0.0
+2026-05-19 01:34:06,NVDA,222.35,8,MEDIUM,"Heavy unusual volume: 2.67x avg | Near/breaking recent high | Gap move: 3.88% | Above short-term trend | News catalyst: UBS Raises Broadcom Inc. (AVGO.US) TP to USD490, Sees Earnings Likely to Beat in Coming Quarters",222.35,222.35,,,,0.0
+2026-05-19 01:34:08,MSFT,423.66,11,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend | News catalyst: Why FuelCell Energy (FCEL) Is Up 11.3% After Debuting Its AI-Focused 12.5-Megawatt Platform,423.66,423.66,,,,0.0
+2026-05-19 01:34:09,META,611.33,10,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend | Positive news: This Nvidia-Backed Artificial Intelligence (AI) Infrastructure Company Is Solving a Key Problem. It Could Easily Become a Multibagger Stock in the Next 3 Years,611.33,611.33,,,,0.0
+2026-05-19 01:34:16,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,,0.0
+2026-05-19 01:42:01,AAPL,297.9,11,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend | Positive news: Apple CEO Tim Cook in Beijing with US Presidential Delegation – May 2026 - News and Statistics,297.9,297.9,,,,-0.0
+2026-05-19 01:42:02,NVDA,222.35,8,MEDIUM,"Heavy unusual volume: 2.67x avg | Near/breaking recent high | Gap move: 3.88% | Above short-term trend | News catalyst: UBS Raises Broadcom Inc. (AVGO.US) TP to USD490, Sees Earnings Likely to Beat in Coming Quarters",222.35,222.35,,,,0.0
+2026-05-19 01:42:05,MSFT,423.66,11,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend | News catalyst: Why FuelCell Energy (FCEL) Is Up 11.3% After Debuting Its AI-Focused 12.5-Megawatt Platform,423.66,423.66,,,,0.0
+2026-05-19 01:42:06,META,611.33,10,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend | Positive news: This Nvidia-Backed Artificial Intelligence (AI) Infrastructure Company Is Solving a Key Problem. It Could Easily Become a Multibagger Stock in the Next 3 Years,611.33,611.33,,,,0.0
+2026-05-19 01:42:12,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,,0.0
+2026-05-19 01:49:51,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,-0.0,-0.0
+2026-05-19 01:49:55,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,0.0,0.0
+2026-05-19 01:49:56,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,0.0,0.0
+2026-05-19 01:50:02,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,0.0,0.0
+2026-05-19 01:59:52,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,0.0,0.0
+2026-05-19 01:59:56,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,0.0,0.0
+2026-05-19 01:59:59,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,0.0,0.0
+2026-05-19 02:00:08,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,-0.0,-0.0
+2026-05-19 02:00:57,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,611.33,,,0.0,0.0
+2026-05-19 02:01:03,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,297.9,,,-0.0,-0.0
+2026-05-19 02:01:04,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,77.15,,,0.0,0.0
+2026-05-19 02:01:10,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,423.66,,,0.0,0.0
+2026-05-19 02:04:19,AAPL,297.9,9,MEDIUM,Heavy unusual volume: 3.55x avg | Near/breaking recent high | Outperforming SPY by 1.28% | Gap move: 2.38% | Above short-term trend,297.9,,,,-0.0,
+2026-05-19 02:04:22,MSFT,423.66,10,MEDIUM,Heavy unusual volume: 3.59x avg | Near/breaking recent high | Strong move: 3.21% | Outperforming SPY by 2.91% | Above short-term trend,423.66,,,,0.0,
+2026-05-19 02:04:23,META,611.33,8,MEDIUM,Heavy unusual volume: 3.62x avg | Decent move: 2.98% | Outperforming SPY by 2.68% | Gap move: 2.63% | Above short-term trend,611.33,,,,0.0,
+2026-05-19 02:04:29,HOOD,77.15,8,MEDIUM,Heavy unusual volume: 3.37x avg | Near/breaking recent high | Decent move: -2.85% | Gap move: -4.27% | Above short-term trend,77.15,,,,0.0,

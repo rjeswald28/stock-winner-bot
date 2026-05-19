@@ -1,0 +1,4 @@
+.env
+env_backup_working.txt
+__pycache__/
+
