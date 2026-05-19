@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 
 last_summary_date = None
 
+last_alert_times = {}
+
 last_scan_time = "Never"
 
 load_dotenv()
@@ -314,6 +316,15 @@ def scan_market():
 
         alert_key = f"{result['ticker']}-{datetime.now().strftime('%Y-%m-%d')}"
 
+        now_ts = time.time()
+
+        last_alert = last_alert_times.get(result["ticker"], 0)
+
+        cooldown_seconds = 3600
+
+        if now_ts - last_alert < cooldown_seconds:
+            continue
+
         if result["score"] >= 8 and result["risk"] != "HIGH" and alert_key not in alerted_today:
             alerted_today.add(alert_key)
 
@@ -337,6 +348,9 @@ def scan_market():
             )
 
             send_telegram(message)
+
+            last_alert_times[result["ticker"]] = now_ts 
+
             log_alert(result)
 
 def update_paper_trades():
