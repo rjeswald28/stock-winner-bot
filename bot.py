@@ -3,7 +3,7 @@ import time
 import requests
 import pandas as pd
 import yfinance as yf
-from datetime import datetime
+from datetime import datetime, time as dt_time
 from dotenv import load_dotenv
 
 last_summary_date = None
@@ -273,6 +273,20 @@ def get_top_movers():
         print(f"Top movers error: {e}")
         return []
 
+def is_market_scan_time():
+    now = datetime.now()
+
+    # Monday=0, Sunday=6
+    if now.weekday() > 4:
+        return False
+
+    current_time = now.time()
+
+    premarket_start = dt_time(7, 0)
+    market_close = dt_time(16, 30)
+
+    return premarket_start <= current_time <= market_close
+
 
 def scan_market():
     print("Scanning market...")
@@ -412,10 +426,14 @@ def main():
     send_telegram("✅ Family Stock Bot started. Watchlist mode only.")
 
     while True:
-        scan_market()
-        update_paper_trades()
-        send_daily_summary()
-        send_leaderboard()
+        if is_market_scan_time():
+            scan_market()
+            update_paper_trades()
+            send_daily_summary()
+            send_leaderboard()
+        else:
+            print("Outside market scan time. Waiting...")
+
         check_telegram_commands()
         time.sleep(SCAN_INTERVAL_SECONDS)
 
