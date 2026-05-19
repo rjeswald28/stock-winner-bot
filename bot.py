@@ -12,6 +12,11 @@ last_alert_times = {}
 
 last_scan_time = "Never"
 
+last_update_id = 0
+
+wins = 0
+losses = 0
+
 load_dotenv()
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -161,6 +166,13 @@ def analyze_stock(ticker):
 
     relative_strength = price_change - spy_change
 
+    market_sentiment = "NEUTRAL"
+
+    if relative_strength >= 2:
+        market_sentiment = "BULLISH"
+    elif relative_strength <= -2:
+        market_sentiment = "BEARISH"
+
     score = 0
     reasons = []
 
@@ -219,6 +231,7 @@ def analyze_stock(ticker):
         "risk": risk,
         "reasons": reasons,
         "confidence": confidence,
+        "market_sentiment": market_sentiment,
         "price_change": round(price_change, 2),
         "gap_percent": round(gap_percent, 2),
         "relative_strength": round(relative_strength, 2),
@@ -365,6 +378,7 @@ def scan_market():
                 f"Move: {result['price_change']}%\n"
                 f"Gap: {result['gap_percent']}%\n"
                 f"Relative Strength vs SPY: {result['relative_strength']}%\n"
+                f"Market Sentiment: {result['market_sentiment']}\n"
                 f"Volume: {result['volume_ratio']}x avg\n\n"
                 f"Reasons:\n- " + "\n- ".join(result["reasons"]) +
                 f"\n\nQuick Read: {result['confidence']} setup with {result['volume_ratio']}x volume and {result['relative_strength']}% strength vs SPY.\n"
@@ -405,6 +419,13 @@ def update_paper_trades():
          
             alert_price = float(row["alert_price"])
             gain_percent = ((current_price - alert_price) / alert_price) * 100
+            
+            global wins, losses
+
+            if gain_percent >= 2:
+                wins += 1
+            elif gain_percent <= -2:
+                losses += 1
 
             if pd.isna(row["price_30_min"]):
                 df.at[index, "price_30_min"] = round(current_price, 2)
@@ -419,12 +440,21 @@ def update_paper_trades():
     df.to_csv(file_name, index=False)
 
 def check_telegram_commands():
+    global last_update_id
+
     try:
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/getUpdates"
-        response = requests.get(url, timeout=10)
+
+        params = {
+            "offset": last_update_id + 1
+        }
+
+        response = requests.get(url, params=params, timeout=10)
         data = response.json()
 
-        for update in data.get("result", [])[-5:]:
+        for update in data.get("result", []):
+            last_update_id = update.get("update_id", last_update_id)
+
             message = update.get("message", {})
             text = message.get("text", "")
             chat = message.get("chat", {})
@@ -436,6 +466,7 @@ def check_telegram_commands():
                     f"Last scan: {last_scan_time}\n"
                     f"Watchlist size: {len(WATCHLIST)}\n"
                     f"Mode: Watchlist + paper trading"
+
                 )
 
     except Exception as e:
@@ -479,7 +510,6 @@ def main():
             scan_market()
             update_paper_trades()
             send_daily_summary()
-            send_leaderboard()
         else:
             print("Outside market scan time. Waiting...")
 
