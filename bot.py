@@ -301,7 +301,8 @@ def scan_market():
     global last_scan_time
     last_scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
    
-    unique_watchlist = WATCHLIST
+    dynamic_watchlist = WATCHLIST + get_top_movers()
+    unique_watchlist = list(set(dynamic_watchlist))
 
     for ticker in unique_watchlist:
         result = analyze_stock(ticker)
