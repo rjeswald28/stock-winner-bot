@@ -296,9 +296,34 @@ def is_market_scan_time():
 
     return premarket_start <= current_time <= market_close
 
+def market_is_bullish():
+    try:
+        spy = yf.download("SPY", period="5d", interval="1d", progress=False, auto_adjust=True)
+
+        if spy.empty:
+            return True
+
+        if isinstance(spy.columns, pd.MultiIndex):
+            spy.columns = spy.columns.get_level_values(0)
+
+        close = spy["Close"]
+
+        current_price = close.iloc[-1].item()
+        avg_price = close.mean().item()
+
+        return current_price >= avg_price
+
+    except Exception as e:
+        print(f"Market filter error: {e}")
+        return True
+
 
 def scan_market():
     print("Scanning market...")
+
+    if not market_is_bullish():
+        print("Market trend bearish. Skipping aggressive scans.")
+        return
 
     global last_scan_time
     last_scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
