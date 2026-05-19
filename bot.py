@@ -346,6 +346,8 @@ def scan_market():
     for ticker in unique_watchlist:
         result = analyze_stock(ticker)
 
+        print(f"Checked {ticker}: {result}")
+
         if not result:
             continue
 
