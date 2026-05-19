@@ -340,13 +340,10 @@ def scan_market():
     global last_scan_time
     last_scan_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
    
-    dynamic_watchlist = WATCHLIST + get_top_movers()
-    unique_watchlist = list(set(dynamic_watchlist))
+    dynamic_watchlist = WATCHLIST
 
     for ticker in unique_watchlist:
         result = analyze_stock(ticker)
-
-        print(f"Checked {ticker}: {result}")
 
         if not result:
             continue
@@ -366,8 +363,6 @@ def scan_market():
 
         if result["score"] >= 8 and alert_key not in alerted_today:
             alerted_today.add(alert_key)
-
-            print(f"SENDING ALERT FOR {result['ticker']}")
  
             chart_link = f"https://finance.yahoo.com/quote/{result['ticker']}"
 
@@ -515,7 +510,7 @@ def main():
     send_telegram("✅ Family Stock Bot started. Watchlist mode only.")
 
     while True:
-        if True:
+        if is_market_scan_time():
             scan_market()
             update_paper_trades()
             send_daily_summary()
