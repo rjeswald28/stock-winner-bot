@@ -476,10 +476,10 @@ def check_telegram_commands():
             if text == "/watchlist" and chat_id == str(CHAT_ID):
                 watchlist_text = ", ".join(WATCHLIST)
  
-               send_telegram(
-                   f"📋 Current Watchlist\n\n"
-                   f"{watchlist_text}\n\n"
-                   f"Total: {len(WATCHLIST)} tickers"
+                send_telegram(
+                    f"📋 Current Watchlist\n\n"
+                    f"{watchlist_text}\n\n"
+                    f"Total: {len(WATCHLIST)} tickers"
                 )
 
     except Exception as e:
