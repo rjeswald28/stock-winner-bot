@@ -511,7 +511,7 @@ def main():
     send_telegram("✅ Family Stock Bot started. Watchlist mode only.")
 
     while True:
-        if True
+        if True:
             scan_market()
             update_paper_trades()
             send_daily_summary()
